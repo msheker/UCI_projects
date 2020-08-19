@@ -1,0 +1,35 @@
+#https://app.quickdatabasediagrams.com/#/d/JAjqI7
+employees
+-
+emp_no int64
+emp_title_id string
+birth_date string
+first_name string
+last_name string
+sex string
+hire_date string
+
+departments
+-
+dept_no string FK - manager.dept_no
+dept_name string
+
+manager
+-
+dept_no string
+emp_no int64 FK - employees.emp_no
+
+emp
+-
+emp_no int64 FK - employees.emp_no
+dept_no string FK - manager.dept_no
+
+titles
+-
+title_id string FK - employees.emp_title_id
+title string
+
+salaries
+-
+emp_no int64 FK - employees.emp_no
+salary int64
